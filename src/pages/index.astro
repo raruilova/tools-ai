@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+interface CardInfo {
+	title: string,
+	body:string,
+	href: string,
+	img: string
+}
+
+
+const cards:CardInfo[] = [{
+	title: 'Gemini',
+	body:'Inteligencia artificial para que realices todo lo que gustes, su información es actual', 
+	href:'https://gemini.google.com/app',
+	img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.png/1024px-Gemini_language_model_logo.png"
+},
+{
+	title: 'Chat GPT',
+	body:'Inteligencia artificial para que realices todo lo que gustes, su información esta solo hasta el 2021', 
+	href:'https://chat.openai.com/',
+	img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/800px-ChatGPT_logo.svg.png"
+},
+{
+	title: 'Ideogram',
+	body:'Inteligencia artificial para generar imágenes', 
+	href:'https://ideogram.ai',
+	img: "https://i.ytimg.com/vi/GjKtQkXs2ds/maxresdefault.jpg"
+},
+{
+	title: 'Gamma',
+	body:'Inteligencia artificial para generar presentaciones en base a tus ideas', 
+	href:'https://gamma.app/?lng=es-ES',
+	img: "https://uploads-ssl.webflow.com/62e823626cd4fdd0e5dc1527/62e823626cd4fd38ebdc15a2_Door.png"
+},
+{
+	title: 'Adobe firefly',
+	body:'Conjunto de herramientas de adobe con Inteligencia artificial', 
+	href:'https://firefly.adobe.com/',
+	img: "https://www.lavanguardia.com/andro4all/hero/2023/04/adobe-firefly.png?width=1200"
+}
+]
+---
+
+<Layout title="Herramientas IA">
+	<main>
+		<h1>Herramientas de IA</h1>
+		{
+			cards.map(item => (
+			<Card title={item.title} body={item.body} href={item.href} img={item.img}/>
+
+			))
+		}
+
+	</main>
+</Layout>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		margin-top: 2em;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	
+</style>
